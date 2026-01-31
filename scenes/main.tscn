@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cw5256py6w6j8"]
+[gd_scene load_steps=11 format=3 uid="uid://cw5256py6w6j8"]
 
 [ext_resource type="Shader" uid="uid://du4wpra8oqlut" path="res://assets/canvas-background.gdshader" id="1_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://3j161uu6daw6" path="res://scenes/canvas/canvas.tscn" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://sk5j22xchkav" path="res://scenes/main.gd" id="1_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://bn3gnsy32iwn6" path="res://assets/sprites/animals/chick.png" id="2_tefeu"]
+[ext_resource type="Resource" uid="uid://br0yp4d13brcp" path="res://resources/chick.tres" id="2_tipki"]
 [ext_resource type="Texture2D" uid="uid://crud1em5agc8i" path="res://assets/sprites/icon-touch.png" id="3_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://dlppwlm48mack" path="res://assets/sprites/frame.png" id="3_tefeu"]
 [ext_resource type="Texture2D" uid="uid://b0pjupuk6oa2i" path="res://assets/sprites/icon-restart.png" id="4_tefeu"]
@@ -21,6 +23,9 @@ corner_radius_bottom_right = 36
 corner_radius_bottom_left = 36
 
 [node name="Main" type="Node"]
+script = ExtResource("1_o6xl0")
+animal_data = ExtResource("2_tipki")
+canvas_scene = ExtResource("1_o5qli")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_o6xl0")
@@ -66,7 +71,7 @@ grow_vertical = 2
 layout_mode = 2
 texture = ExtResource("3_tefeu")
 
-[node name="Canvas" parent="." instance=ExtResource("1_o5qli")]
+[node name="CanvasContainer" type="Node" parent="."]
 
 [node name="ControlsOverlay" type="CanvasLayer" parent="."]
 visible = false
