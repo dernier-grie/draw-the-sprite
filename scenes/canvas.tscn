@@ -1,7 +1,24 @@
-[gd_scene format=3 uid="uid://3j161uu6daw6"]
+[gd_scene load_steps=3 format=3 uid="uid://3j161uu6daw6"]
+
+[ext_resource type="Shader" uid="uid://du4wpra8oqlut" path="res://assets/canvas-background.gdshader" id="1_7axt1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_owpp6"]
+shader = ExtResource("1_7axt1")
+shader_parameter/paper_color = Color(0.95, 0.95, 0.95, 1)
+shader_parameter/dot_density = 500.0
+shader_parameter/grain_intensity = 0.04
 
 [node name="Canvas" type="Control"]
 layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_owpp6")
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
