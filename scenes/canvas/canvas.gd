@@ -15,6 +15,8 @@ class_name DrawCanvas
 @export var frame_size: float= 408.0
 @export var threshold_margin: float = 0.0
 
+signal drawn
+
 var is_drawing: bool
 var last_point: Vector2 = Vector2.ZERO
 
@@ -74,10 +76,11 @@ func _set_current_points():
 
 func _set_rect():
 	rect = Rect2(size.x / 2  - frame_size / 2, size.y / 2  - frame_size / 2, frame_size, frame_size)
-	
 
 func _test_point_overlap(pos: Vector2):
 	for i in range(current_points.size() - 1, -1, -1):
 		if pos.distance_squared_to(current_points[i]) < threshold_squared:
 			current_points.remove_at(i)
+			if current_points.size() == 0:
+				drawn.emit()
 			break
