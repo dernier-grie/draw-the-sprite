@@ -24,7 +24,6 @@ func _draw() -> void:
 	for line in lines:
 		draw_polyline(line, line_color, line_width)
 		
-		
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		is_drawing = event.is_pressed()

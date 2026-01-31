@@ -1,7 +1,86 @@
-[gd_scene load_steps=2 format=3 uid="uid://cw5256py6w6j8"]
+[gd_scene load_steps=7 format=3 uid="uid://cw5256py6w6j8"]
 
-[ext_resource type="PackedScene" uid="uid://3j161uu6daw6" path="res://scenes/canvas.tscn" id="1_o5qli"]
+[ext_resource type="Shader" uid="uid://du4wpra8oqlut" path="res://assets/canvas-background.gdshader" id="1_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://3j161uu6daw6" path="res://scenes/canvas/canvas.tscn" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://crud1em5agc8i" path="res://assets/sprites/icon-touch.png" id="3_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://b0pjupuk6oa2i" path="res://assets/sprites/icon-restart.png" id="4_tefeu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o6xl0"]
+shader = ExtResource("1_jyhfs")
+shader_parameter/paper_color = Color(0.95, 0.95, 0.95, 1)
+shader_parameter/dot_density = 500.0
+shader_parameter/grain_intensity = 0.04
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tipki"]
+bg_color = Color(0.17283267, 0.17283267, 0.17283258, 1)
+corner_radius_top_left = 36
+corner_radius_top_right = 36
+corner_radius_bottom_right = 36
+corner_radius_bottom_left = 36
 
 [node name="Main" type="Node"]
 
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_o6xl0")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="Canvas" parent="." instance=ExtResource("1_o5qli")]
+
+[node name="ControlsOverlay" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="MarginContainer" type="MarginContainer" parent="ControlsOverlay"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -188.0
+offset_top = -188.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.75, 0.75)
+pivot_offset = Vector2(188, 188)
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="PanelContainer" type="PanelContainer" parent="ControlsOverlay/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tipki")
+
+[node name="MarginContainer" type="MarginContainer" parent="ControlsOverlay/MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 36
+theme_override_constants/margin_top = 36
+theme_override_constants/margin_right = 36
+theme_override_constants/margin_bottom = 36
+
+[node name="TextureRect" type="TextureRect" parent="ControlsOverlay/MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("3_tbgi4")
+
+[node name="MarginContainer2" type="MarginContainer" parent="ControlsOverlay"]
+offset_right = 188.0
+offset_bottom = 188.0
+scale = Vector2(0.75, 0.75)
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+
+[node name="PanelContainer" type="PanelContainer" parent="ControlsOverlay/MarginContainer2"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tipki")
+
+[node name="MarginContainer" type="MarginContainer" parent="ControlsOverlay/MarginContainer2/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 36
+theme_override_constants/margin_top = 36
+theme_override_constants/margin_right = 36
+theme_override_constants/margin_bottom = 36
+
+[node name="TextureRect" type="TextureRect" parent="ControlsOverlay/MarginContainer2/PanelContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("4_tefeu")
