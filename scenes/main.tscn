@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://n3ww31mldqv"]
+[gd_scene load_steps=3 format=3 uid="uid://n3ww31mldqv"]
 
 [ext_resource type="PackedScene" uid="uid://cw5256py6w6j8" path="res://scenes/draw/draw.tscn" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://dycx3xil6tbdc" path="res://scenes/main.gd" id="1_o6xl0"]
 
 [node name="Main" type="Node"]
+script = ExtResource("1_o6xl0")
 
 [node name="SceneContainer" type="Node" parent="."]
 
