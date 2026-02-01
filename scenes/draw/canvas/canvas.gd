@@ -33,7 +33,7 @@ var threshold_squared: float
 
 func _ready() -> void:
 	threshold_squared = pow(points_radius + line_width / 2.0 + threshold_margin, 2)
-	_set_canvas_items()
+	resized.connect(_set_canvas_items)
 
 func _draw() -> void:
 	for point in current_points:
@@ -84,7 +84,7 @@ func _test_point_overlap(pos: Vector2):
 	for i in range(current_points.size() - 1, -1, -1):
 		if pos.distance_squared_to(current_points[i]) < threshold_squared:
 			current_points.remove_at(i)
-			ParticlesSpawner.request_star(pos, particle_color)
+			ParticlesSpawner.request_star(get_global_transform() * pos, particle_color)
 			if current_points.size() == 0:
 				drawn.emit()
 			break

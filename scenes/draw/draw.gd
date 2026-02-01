@@ -8,7 +8,7 @@ extends Node
 @export_group("UI options")
 @export var ui_color: Color = Color.hex(0x353541ff)
 
-@onready var canvas_container: Control = $CanvasContainer
+@onready var canvas_container: Control = $MarginContainer/CanvasContainer
 @onready var texture_rect_animal: TextureRect = $AnimalContainer/TextureRect
 @onready var texture_rect_frame: TextureRect = $FrameContainer/TextureRect
 
@@ -31,7 +31,6 @@ func _setup_canvas():
 	var canvas = canvas_scene.instantiate() as DrawCanvas
 	canvas.points_color = ui_color
 	canvas.line_color = ui_color
-	print(ui_color)
 	canvas.points = animal_data.points
 	canvas.frame_size = animal_data.texture.get_width()
 	canvas.drawn.connect(_on_canvas_drawn)
