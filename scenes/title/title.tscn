@@ -1,7 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://ctntjhypvcier"]
+[gd_scene load_steps=3 format=3 uid="uid://ctntjhypvcier"]
 
 [ext_resource type="PackedScene" uid="uid://s8egcqjjvaf8" path="res://scenes/background/background.tscn" id="1_5vtrw"]
+[ext_resource type="Script" uid="uid://lp5h5hfvl5qu" path="res://scenes/title/title.gd" id="1_ds13r"]
 
 [node name="Title" type="Node"]
+script = ExtResource("1_ds13r")
 
 [node name="Background" parent="." instance=ExtResource("1_5vtrw")]

@@ -10,7 +10,9 @@ func _ready() -> void:
 	var title_scene = scene_library.get_scene(SceneLibraryData.SceneID.TITLE)
 	scene_container.add_child(title_scene.instantiate())
 	
-func transition_to(id: SceneLibraryData.SceneID) -> void:
+	Events.request_scene.connect(transition_to_scene)
+	
+func transition_to_scene(id: SceneLibraryData.SceneID) -> void:
 	animation_player_overlay.play("fade-in")
 	await animation_player_overlay.animation_finished
 	

@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 ParticlesSpawner="*res://systems/particle_spawner/particles_spawner.tscn"
+Events="*res://systems/events/events.gd"
 
 [display]
 
