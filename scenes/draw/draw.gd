@@ -31,6 +31,7 @@ func _setup_canvas():
 	var canvas = canvas_scene.instantiate() as DrawCanvas
 	canvas.points_color = ui_color
 	canvas.line_color = ui_color
+	print(ui_color)
 	canvas.points = animal_data.points
 	canvas.frame_size = animal_data.texture.get_width()
 	canvas.drawn.connect(_on_canvas_drawn)

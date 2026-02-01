@@ -21,6 +21,7 @@
 script = ExtResource("1_tmstp")
 animal_dataset = Array[ExtResource("2_2g8h5")]([ExtResource("3_75ru5"), ExtResource("4_hl5mu"), ExtResource("5_2fpui"), ExtResource("6_idacj"), ExtResource("7_kp535"), ExtResource("8_1hoec"), ExtResource("9_mtx7o"), ExtResource("10_besai"), ExtResource("11_ukkpr"), ExtResource("12_klbv4"), ExtResource("13_2b17j")])
 canvas_scene = ExtResource("14_65k71")
+ui_color = Color(0.32941177, 0.3254902, 0.3254902, 1)
 
 [node name="Background" parent="." instance=ExtResource("15_8mcof")]
 

@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://crud1em5agc8i" path="res://assets/sprites/controls/icon-touch.png" id="4_yjwoi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4gru"]
-bg_color = Color(0.15487596, 0.154876, 0.15487596, 1)
+bg_color = Color(0.32941177, 0.3254902, 0.3254902, 1)
 corner_radius_top_left = 36
 corner_radius_top_right = 36
 corner_radius_bottom_right = 36
@@ -18,7 +18,7 @@ border_width_left = 12
 border_width_top = 12
 border_width_right = 12
 border_width_bottom = 12
-border_color = Color(0.16862746, 0.16862746, 0.16862746, 1)
+border_color = Color(0.32941177, 0.3254902, 0.3254902, 1)
 corner_radius_top_left = 36
 corner_radius_top_right = 36
 corner_radius_bottom_right = 36
@@ -167,13 +167,13 @@ theme_override_constants/separation = 0
 
 [node name="Label" type="Label" parent="MarginContainer/TitleArea/PanelContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.16924527, 0.1692453, 0.16924527, 1)
+theme_override_colors/font_color = Color(0.32941177, 0.3254902, 0.3254902, 1)
 theme_override_font_sizes/font_size = 156
 text = "Draw"
 
 [node name="Label2" type="Label" parent="MarginContainer/TitleArea/PanelContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.16862746, 0.16862746, 0.16862746, 1)
+theme_override_colors/font_color = Color(0.32941177, 0.3254902, 0.3254902, 1)
 theme_override_font_sizes/font_size = 78
 text = "the sprite"
 horizontal_alignment = 1
