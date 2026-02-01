@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://bymnrvakmrywf"]
+
+[ext_resource type="Texture2D" uid="uid://bixc82y2q1rm1" path="res://assets/sprites/effects/particle-star.png" id="1_eiw72"]
+[ext_resource type="Script" uid="uid://d3l160jfpylvb" path="res://scenes/star_particles/star_particles.gd" id="2_1c4r4"]
+
+[sub_resource type="Curve" id="Curve_1c4r4"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5074074, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.72958404), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_y607e"]
+curve = SubResource("Curve_1c4r4")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_de4d2"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 20.0
+initial_velocity_max = 60.0
+gravity = Vector3(0, 0, 0)
+damping_max = 20.0
+scale_min = 0.25
+scale_max = 0.45
+scale_curve = SubResource("CurveTexture_y607e")
+
+[node name="GPUParticles2D" type="GPUParticles2D"]
+emitting = false
+amount = 5
+texture = ExtResource("1_eiw72")
+lifetime = 0.8
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_de4d2")
+script = ExtResource("2_1c4r4")
