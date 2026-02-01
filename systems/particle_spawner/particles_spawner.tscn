@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://du80sgoy2jha6"]
 
-[ext_resource type="Script" uid="uid://ctqwmsmqi3fu1" path="res://systems/particles_spawner.gd" id="1_hkjwy"]
+[ext_resource type="Script" uid="uid://ctqwmsmqi3fu1" path="res://systems/particle_spawner/particles_spawner.gd" id="1_hkjwy"]
 [ext_resource type="PackedScene" uid="uid://bymnrvakmrywf" path="res://scenes/star_particles/star_particles.tscn" id="2_n3qh4"]
 
 [node name="ParticlesSpawner" type="CanvasLayer"]
