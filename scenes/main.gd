@@ -1,7 +1,7 @@
 extends Node
 
 @export_group("Draw options")
-@export var animal_data: AnimalData
+@export var animal_dataset: Array[AnimalData]
 @export var canvas_scene: PackedScene
 @export var reveal_duration: float = 0.5
 
@@ -12,7 +12,10 @@ extends Node
 @onready var texture_rect_animal: TextureRect = $AnimalContainer/TextureRect
 @onready var texture_rect_frame: TextureRect = $FrameContainer/TextureRect
 
+var animal_data: AnimalData
+
 func _ready() -> void:
+	animal_data = animal_dataset.pick_random()
 	_setup_animal()
 	_setup_frame()
 	_setup_canvas()

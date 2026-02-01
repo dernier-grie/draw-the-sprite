@@ -1,12 +1,23 @@
-[gd_scene load_steps=10 format=3 uid="uid://cw5256py6w6j8"]
+[gd_scene load_steps=21 format=3 uid="uid://cw5256py6w6j8"]
 
 [ext_resource type="Shader" uid="uid://du4wpra8oqlut" path="res://assets/canvas-background.gdshader" id="1_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://3j161uu6daw6" path="res://scenes/canvas/canvas.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://sk5j22xchkav" path="res://scenes/main.gd" id="1_o6xl0"]
+[ext_resource type="Script" uid="uid://bf7plq4hcgaxn" path="res://data/animal_data.gd" id="2_dp3eg"]
 [ext_resource type="Resource" uid="uid://br0yp4d13brcp" path="res://resources/chick.tres" id="2_tipki"]
 [ext_resource type="Texture2D" uid="uid://crud1em5agc8i" path="res://assets/sprites/icon-touch.png" id="3_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://dlppwlm48mack" path="res://assets/sprites/frame.png" id="3_tefeu"]
+[ext_resource type="Resource" uid="uid://doyktkuwfjc0v" path="res://resources/chimp.tres" id="4_0ld40"]
 [ext_resource type="Texture2D" uid="uid://b0pjupuk6oa2i" path="res://assets/sprites/icon-restart.png" id="4_tefeu"]
+[ext_resource type="Resource" uid="uid://c8oyo4fxtgn8s" path="res://resources/cow.tres" id="5_gqmmt"]
+[ext_resource type="Resource" uid="uid://c4m2dd4syp2l7" path="res://resources/duck.tres" id="6_yc10j"]
+[ext_resource type="Resource" uid="uid://dio31ucm0oa0b" path="res://resources/elephant.tres" id="7_jscy8"]
+[ext_resource type="Resource" uid="uid://diq2spv1g88wj" path="res://resources/horse.tres" id="8_pm3ni"]
+[ext_resource type="Resource" uid="uid://cv1qhl1mpyhtk" path="res://resources/owl.tres" id="9_y6deb"]
+[ext_resource type="Resource" uid="uid://buha5835ovp5b" path="res://resources/parrot.tres" id="10_og1vs"]
+[ext_resource type="Resource" uid="uid://cjmqh3bebxhdj" path="res://resources/seal.tres" id="11_2wyq8"]
+[ext_resource type="Resource" uid="uid://d0vm8kht82wb1" path="res://resources/snake.tres" id="12_vxglm"]
+[ext_resource type="Resource" uid="uid://dv5xbwvf7pqq8" path="res://resources/wolf.tres" id="13_2f3dj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o6xl0"]
 shader = ExtResource("1_jyhfs")
@@ -23,7 +34,7 @@ corner_radius_bottom_left = 36
 
 [node name="Main" type="Node"]
 script = ExtResource("1_o6xl0")
-animal_data = ExtResource("2_tipki")
+animal_dataset = Array[ExtResource("2_dp3eg")]([ExtResource("2_tipki"), ExtResource("4_0ld40"), ExtResource("5_gqmmt"), ExtResource("6_yc10j"), ExtResource("7_jscy8"), ExtResource("8_pm3ni"), ExtResource("9_y6deb"), ExtResource("10_og1vs"), ExtResource("11_2wyq8"), ExtResource("12_vxglm"), ExtResource("13_2f3dj")])
 canvas_scene = ExtResource("1_o5qli")
 
 [node name="ColorRect" type="ColorRect" parent="."]
