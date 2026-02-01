@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cw5256py6w6j8"]
+[gd_scene load_steps=17 format=3 uid="uid://cw5256py6w6j8"]
 
 [ext_resource type="Script" uid="uid://sk5j22xchkav" path="res://scenes/draw/draw.gd" id="1_tmstp"]
 [ext_resource type="Script" uid="uid://bf7plq4hcgaxn" path="res://data/animal_data.gd" id="2_2g8h5"]
@@ -14,36 +14,15 @@
 [ext_resource type="Resource" uid="uid://d0vm8kht82wb1" path="res://resources/animals/snake.tres" id="12_klbv4"]
 [ext_resource type="Resource" uid="uid://dv5xbwvf7pqq8" path="res://resources/animals/wolf.tres" id="13_2b17j"]
 [ext_resource type="PackedScene" uid="uid://3j161uu6daw6" path="res://scenes/draw/canvas/canvas.tscn" id="14_65k71"]
-[ext_resource type="Shader" uid="uid://du4wpra8oqlut" path="res://assets/canvas-background.gdshader" id="15_5bk68"]
+[ext_resource type="PackedScene" uid="uid://s8egcqjjvaf8" path="res://scenes/background/background.tscn" id="15_8mcof"]
 [ext_resource type="Texture2D" uid="uid://dlppwlm48mack" path="res://assets/sprites/frame.png" id="16_ypiif"]
-[ext_resource type="Texture2D" uid="uid://crud1em5agc8i" path="res://assets/sprites/controls/icon-touch.png" id="17_1736b"]
-[ext_resource type="Texture2D" uid="uid://b0pjupuk6oa2i" path="res://assets/sprites/controls/icon-restart.png" id="18_ela6t"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_o6xl0"]
-shader = ExtResource("15_5bk68")
-shader_parameter/paper_color = Color(0.95, 0.95, 0.95, 1)
-shader_parameter/dot_density = 500.0
-shader_parameter/grain_intensity = 0.04
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tipki"]
-bg_color = Color(0.17283267, 0.17283267, 0.17283258, 1)
-corner_radius_top_left = 36
-corner_radius_top_right = 36
-corner_radius_bottom_right = 36
-corner_radius_bottom_left = 36
 
 [node name="Draw" type="Node"]
 script = ExtResource("1_tmstp")
 animal_dataset = Array[ExtResource("2_2g8h5")]([ExtResource("3_75ru5"), ExtResource("4_hl5mu"), ExtResource("5_2fpui"), ExtResource("6_idacj"), ExtResource("7_kp535"), ExtResource("8_1hoec"), ExtResource("9_mtx7o"), ExtResource("10_besai"), ExtResource("11_ukkpr"), ExtResource("12_klbv4"), ExtResource("13_2b17j")])
 canvas_scene = ExtResource("14_65k71")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_o6xl0")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Background" parent="." instance=ExtResource("15_8mcof")]
 
 [node name="AnimalContainer" type="CenterContainer" parent="."]
 anchors_preset = 8
@@ -85,58 +64,3 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="ControlsOverlay" type="CanvasLayer" parent="."]
-visible = false
-
-[node name="MarginContainer" type="MarginContainer" parent="ControlsOverlay"]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -188.0
-offset_top = -188.0
-grow_horizontal = 0
-grow_vertical = 0
-scale = Vector2(0.75, 0.75)
-pivot_offset = Vector2(188, 188)
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
-
-[node name="PanelContainer" type="PanelContainer" parent="ControlsOverlay/MarginContainer"]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_tipki")
-
-[node name="MarginContainer" type="MarginContainer" parent="ControlsOverlay/MarginContainer/PanelContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 36
-theme_override_constants/margin_top = 36
-theme_override_constants/margin_right = 36
-theme_override_constants/margin_bottom = 36
-
-[node name="TextureRect" type="TextureRect" parent="ControlsOverlay/MarginContainer/PanelContainer/MarginContainer"]
-layout_mode = 2
-texture = ExtResource("17_1736b")
-
-[node name="MarginContainer2" type="MarginContainer" parent="ControlsOverlay"]
-offset_right = 188.0
-offset_bottom = 188.0
-scale = Vector2(0.75, 0.75)
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-
-[node name="PanelContainer" type="PanelContainer" parent="ControlsOverlay/MarginContainer2"]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_tipki")
-
-[node name="MarginContainer" type="MarginContainer" parent="ControlsOverlay/MarginContainer2/PanelContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 36
-theme_override_constants/margin_top = 36
-theme_override_constants/margin_right = 36
-theme_override_constants/margin_bottom = 36
-
-[node name="TextureRect" type="TextureRect" parent="ControlsOverlay/MarginContainer2/PanelContainer/MarginContainer"]
-layout_mode = 2
-texture = ExtResource("18_ela6t")

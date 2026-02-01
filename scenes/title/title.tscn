@@ -4,4 +4,4 @@
 
 [node name="Title" type="Node"]
 
-[node name="ColorRect" parent="." instance=ExtResource("1_5vtrw")]
+[node name="Background" parent="." instance=ExtResource("1_5vtrw")]

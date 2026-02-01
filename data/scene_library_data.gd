@@ -1,6 +1,12 @@
 extends Resource
 class_name SceneLibraryData
 
-#@export var title_screen: PackedScene
+enum SceneID { TITLE, DRAW }
 
-@export var draw_screen: PackedScene
+@export var scene_dict: Dictionary[SceneID, PackedScene] = {
+	SceneID.TITLE: null,
+	SceneID.DRAW: null,
+}
+
+func get_scene(id: SceneID) -> PackedScene:
+	return scene_dict.get(id)
