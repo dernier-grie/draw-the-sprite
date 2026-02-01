@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://s8egcqjjvaf8"]
+
+[ext_resource type="Shader" uid="uid://du4wpra8oqlut" path="res://assets/canvas-background.gdshader" id="1_iheb5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o6xl0"]
+shader = ExtResource("1_iheb5")
+shader_parameter/paper_color = Color(0.95, 0.95, 0.95, 1)
+shader_parameter/dot_density = 500.0
+shader_parameter/grain_intensity = 0.04
+
+[node name="ColorRect" type="ColorRect"]
+material = SubResource("ShaderMaterial_o6xl0")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

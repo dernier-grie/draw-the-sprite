@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctntjhypvcier"]
+
+[ext_resource type="PackedScene" uid="uid://s8egcqjjvaf8" path="res://scenes/background/background.tscn" id="1_5vtrw"]
+
+[node name="Title" type="Node"]
+
+[node name="ColorRect" parent="." instance=ExtResource("1_5vtrw")]
