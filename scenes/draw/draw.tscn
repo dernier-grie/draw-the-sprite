@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cw5256py6w6j8"]
+[gd_scene load_steps=21 format=3 uid="uid://cw5256py6w6j8"]
 
 [ext_resource type="Script" uid="uid://sk5j22xchkav" path="res://scenes/draw/draw.gd" id="1_tmstp"]
 [ext_resource type="Script" uid="uid://bf7plq4hcgaxn" path="res://data/animal_data.gd" id="2_2g8h5"]
@@ -16,6 +16,16 @@
 [ext_resource type="PackedScene" uid="uid://3j161uu6daw6" path="res://scenes/draw/canvas/canvas.tscn" id="14_65k71"]
 [ext_resource type="PackedScene" uid="uid://s8egcqjjvaf8" path="res://scenes/background/background.tscn" id="15_8mcof"]
 [ext_resource type="Texture2D" uid="uid://dlppwlm48mack" path="res://assets/sprites/frame.png" id="16_ypiif"]
+[ext_resource type="PackedScene" uid="uid://clvumgovbwqyn" path="res://scenes/touch_hint/touch_hint.tscn" id="17_8mcof"]
+[ext_resource type="Texture2D" uid="uid://ccdxa4hcagvbm" path="res://assets/sprites/controls/icon-back.png" id="18_r2yso"]
+[ext_resource type="Texture2D" uid="uid://b0pjupuk6oa2i" path="res://assets/sprites/controls/icon-restart.png" id="19_r2yso"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_04dcr"]
+bg_color = Color(0.32941177, 0.3254902, 0.3254902, 1)
+corner_radius_top_left = 36
+corner_radius_top_right = 36
+corner_radius_bottom_right = 36
+corner_radius_bottom_left = 36
 
 [node name="Draw" type="Node"]
 script = ExtResource("1_tmstp")
@@ -24,6 +34,93 @@ canvas_scene = ExtResource("14_65k71")
 ui_color = Color(0.32941177, 0.3254902, 0.3254902, 1)
 
 [node name="Background" parent="." instance=ExtResource("15_8mcof")]
+
+[node name="ControlsContainer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TouchHintBack" parent="ControlsContainer" instance=ExtResource("17_8mcof")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -156.0
+offset_right = 156.0
+grow_vertical = 0
+scale = Vector2(0.75, 0.75)
+pivot_offset = Vector2(0, 156)
+
+[node name="MarginContainer" type="MarginContainer" parent="ControlsContainer/TouchHintBack"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -192.0
+offset_right = 192.0
+grow_vertical = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="PanelContainer" type="PanelContainer" parent="ControlsContainer/TouchHintBack/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_04dcr")
+
+[node name="MarginContainer" type="MarginContainer" parent="ControlsContainer/TouchHintBack/MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="TextureRect" type="TextureRect" parent="ControlsContainer/TouchHintBack/MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("18_r2yso")
+
+[node name="TouchHintRestart" parent="ControlsContainer" instance=ExtResource("17_8mcof")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -156.0
+offset_top = -156.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.75, 0.75)
+pivot_offset = Vector2(0, 156)
+
+[node name="MarginContainer" type="MarginContainer" parent="ControlsContainer/TouchHintRestart"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -192.0
+offset_right = 192.0
+grow_vertical = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="PanelContainer" type="PanelContainer" parent="ControlsContainer/TouchHintRestart/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_04dcr")
+
+[node name="MarginContainer" type="MarginContainer" parent="ControlsContainer/TouchHintRestart/MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="TextureRect" type="TextureRect" parent="ControlsContainer/TouchHintRestart/MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("19_r2yso")
 
 [node name="AnimalContainer" type="CenterContainer" parent="."]
 anchors_preset = 8

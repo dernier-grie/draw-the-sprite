@@ -12,6 +12,9 @@ extends Node
 @onready var texture_rect_animal: TextureRect = $AnimalContainer/TextureRect
 @onready var texture_rect_frame: TextureRect = $FrameContainer/TextureRect
 
+@onready var touch_hint_back: TouchHint = $ControlsContainer/TouchHintBack
+@onready var touch_hint_restart: TouchHint = $ControlsContainer/TouchHintRestart
+
 var animal_data: AnimalData
 
 func _ready() -> void:
@@ -44,3 +47,12 @@ func _on_canvas_drawn():
 	tween.tween_property(texture_rect_animal, "modulate:a", 1.0, reveal_duration)
 	tween.parallel().tween_property(texture_rect_frame, "modulate:a", 0.0, reveal_duration)
 	tween.parallel().tween_property(canvas_container, "modulate:a", 0.0, reveal_duration)
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		if not _is_in_canvas(event.position):
+			touch_hint_back.show_hint()
+			touch_hint_restart.show_hint()
+
+func _is_in_canvas(pos: Vector2) -> bool:
+	return canvas_container.get_rect().has_point(pos)
