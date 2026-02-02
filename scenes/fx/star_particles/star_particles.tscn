@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bymnrvakmrywf"]
 
 [ext_resource type="Texture2D" uid="uid://bixc82y2q1rm1" path="res://assets/sprites/effects/particle-star.png" id="1_eiw72"]
-[ext_resource type="Script" uid="uid://d3l160jfpylvb" path="res://scenes/star_particles/star_particles.gd" id="2_1c4r4"]
+[ext_resource type="Script" uid="uid://d3l160jfpylvb" path="res://scenes/fx/star_particles/star_particles.gd" id="2_1c4r4"]
 
 [sub_resource type="Curve" id="Curve_1c4r4"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5074074, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.72958404), 0.0, 0.0, 0, 0]

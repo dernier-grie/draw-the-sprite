@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://clvumgovbwqyn"]
 
-[ext_resource type="Script" uid="uid://c24owr453ua0m" path="res://scenes/touch_hint/touch_hint.gd" id="1_8jwi8"]
+[ext_resource type="Script" uid="uid://c24owr453ua0m" path="res://scenes/fx/touch_hint/touch_hint.gd" id="1_8jwi8"]
 
 [sub_resource type="Animation" id="Animation_8jwi8"]
 length = 0.001

@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsc4hhr2vbrug"]
+
+[ext_resource type="Script" uid="uid://csmt57w37cq2c" path="res://scenes/fx/audio_cue_layer/audio_cue_layer.gd" id="1_a11cn"]
+[ext_resource type="PackedScene" uid="uid://c237fosab3is5" path="res://scenes/fx/audio_cue_layer/audio_cue_label/audio_cue_label.tscn" id="2_n1ha1"]
+
+[node name="AudioCueLayer" type="CanvasLayer"]
+script = ExtResource("1_a11cn")
+audio_cue_label_scene = ExtResource("2_n1ha1")

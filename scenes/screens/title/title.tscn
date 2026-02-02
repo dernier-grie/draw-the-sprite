@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://ctntjhypvcier"]
 
-[ext_resource type="PackedScene" uid="uid://s8egcqjjvaf8" path="res://scenes/background/background.tscn" id="1_5vtrw"]
-[ext_resource type="Script" uid="uid://lp5h5hfvl5qu" path="res://scenes/title/title.gd" id="1_ds13r"]
-[ext_resource type="PackedScene" uid="uid://clvumgovbwqyn" path="res://scenes/touch_hint/touch_hint.tscn" id="3_7hvf5"]
+[ext_resource type="PackedScene" uid="uid://s8egcqjjvaf8" path="res://scenes/ui/background/background.tscn" id="1_5vtrw"]
+[ext_resource type="Script" uid="uid://lp5h5hfvl5qu" path="res://scenes/screens/title/title.gd" id="1_ds13r"]
+[ext_resource type="PackedScene" uid="uid://clvumgovbwqyn" path="res://scenes/fx/touch_hint/touch_hint.tscn" id="3_7hvf5"]
 [ext_resource type="Texture2D" uid="uid://crud1em5agc8i" path="res://assets/sprites/controls/icon-touch.png" id="4_yjwoi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4gru"]

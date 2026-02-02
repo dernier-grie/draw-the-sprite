@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c237fosab3is5"]
 
-[ext_resource type="Script" uid="uid://dp4de2krxaq7w" path="res://scenes/audio_cue_layer/audio_cue_label/audio_cue_label.gd" id="1_xifo6"]
+[ext_resource type="Script" uid="uid://dp4de2krxaq7w" path="res://scenes/fx/audio_cue_layer/audio_cue_label/audio_cue_label.gd" id="1_xifo6"]
 
 [sub_resource type="Animation" id="Animation_8fa21"]
 length = 0.001
