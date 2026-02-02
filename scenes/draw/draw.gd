@@ -8,6 +8,9 @@ extends Node
 @export_group("UI options")
 @export var ui_color: Color = Color.hex(0x353541ff)
 
+@export_group("Audio options")
+@export var audio_cue_count: int = 15
+
 @onready var canvas_container: Control = $MarginContainer/CanvasContainer
 @onready var texture_rect_animal: TextureRect = $AnimalContainer/TextureRect
 @onready var texture_rect_frame: TextureRect = $FrameContainer/TextureRect
@@ -17,6 +20,8 @@ extends Node
 
 @onready var button_back: Button = $ControlsContainer/TouchHintBack/MarginContainer/PanelContainer/ButtonBack
 @onready var button_refresh: Button = $ControlsContainer/TouchHintRefresh/MarginContainer/PanelContainer/ButtonRefresh
+
+@onready var audio_cue_layer: AudioCueLayer = $AudioCueLayer
 
 var animal_data: AnimalData
 
@@ -45,6 +50,8 @@ func _setup_canvas():
 	for child in canvas_container.get_children():
 		child.queue_free()
 	canvas_container.add_child(canvas)
+	
+	await get_tree().process_frame
 
 func _setup_controls():
 	button_back.pressed.connect(_on_button_back_pressed)
@@ -55,7 +62,15 @@ func _on_canvas_drawn():
 	tween.tween_property(texture_rect_animal, "modulate:a", 1.0, reveal_duration)
 	tween.parallel().tween_property(texture_rect_frame, "modulate:a", 0.0, reveal_duration)
 	tween.parallel().tween_property(canvas_container, "modulate:a", 0.0, reveal_duration)
+	await tween.finished
+	_handle_sprite_drawn()
 
+func _handle_sprite_drawn():
+	for child in canvas_container.get_children():
+		child.queue_free()
+	audio_cue_layer.rect = canvas_container.get_rect()
+	audio_cue_layer.spawn_audio_cues(animal_data.audio_cue, audio_cue_count)
+	
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if not _is_in_canvas(event.position):

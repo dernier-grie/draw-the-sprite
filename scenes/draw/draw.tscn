@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cw5256py6w6j8"]
+[gd_scene load_steps=22 format=3 uid="uid://cw5256py6w6j8"]
 
 [ext_resource type="Script" uid="uid://sk5j22xchkav" path="res://scenes/draw/draw.gd" id="1_tmstp"]
 [ext_resource type="Script" uid="uid://bf7plq4hcgaxn" path="res://data/animal_data.gd" id="2_2g8h5"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://clvumgovbwqyn" path="res://scenes/touch_hint/touch_hint.tscn" id="17_8mcof"]
 [ext_resource type="Texture2D" uid="uid://ccdxa4hcagvbm" path="res://assets/sprites/controls/icon-back.png" id="18_r2yso"]
 [ext_resource type="Texture2D" uid="uid://b0pjupuk6oa2i" path="res://assets/sprites/controls/icon-restart.png" id="19_r2yso"]
+[ext_resource type="PackedScene" uid="uid://dsc4hhr2vbrug" path="res://scenes/audio_cue_layer/audio_cue_layer.tscn" id="20_04dcr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r2yso"]
 bg_color = Color(0.32941177, 0.3254902, 0.3254902, 1)
@@ -188,3 +189,5 @@ theme_override_constants/margin_bottom = 40
 [node name="TextureRect" type="TextureRect" parent="ControlsContainer/TouchHintRefresh/MarginContainer/PanelContainer/ButtonRefresh/MarginContainer"]
 layout_mode = 2
 texture = ExtResource("19_r2yso")
+
+[node name="AudioCueLayer" parent="." instance=ExtResource("20_04dcr")]
