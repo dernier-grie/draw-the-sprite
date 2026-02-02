@@ -13,10 +13,10 @@ extends Node
 @onready var texture_rect_frame: TextureRect = $FrameContainer/TextureRect
 
 @onready var touch_hint_back: TouchHint = $ControlsContainer/TouchHintBack
-@onready var touch_hint_restart: TouchHint = $ControlsContainer/TouchHintRestart
+@onready var touch_hint_refresh: TouchHint = $ControlsContainer/TouchHintRefresh
 
 @onready var button_back: Button = $ControlsContainer/TouchHintBack/MarginContainer/PanelContainer/ButtonBack
-@onready var button_restart: Button = $ControlsContainer/TouchHintRestart/MarginContainer/PanelContainer/ButtonRestart
+@onready var button_refresh: Button = $ControlsContainer/TouchHintRefresh/MarginContainer/PanelContainer/ButtonRefresh
 
 var animal_data: AnimalData
 
@@ -48,7 +48,7 @@ func _setup_canvas():
 
 func _setup_controls():
 	button_back.pressed.connect(_on_button_back_pressed)
-	button_restart.pressed.connect(_on_button_restart_pressed)
+	button_refresh.pressed.connect(_on_button_refresh_pressed)
 
 func _on_canvas_drawn():
 	var tween = create_tween()
@@ -60,7 +60,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if not _is_in_canvas(event.position):
 			touch_hint_back.show_hint()
-			touch_hint_restart.show_hint()
+			touch_hint_refresh.show_hint()
 
 func _is_in_canvas(pos: Vector2) -> bool:
 	return canvas_container.get_rect().has_point(pos)
@@ -68,5 +68,5 @@ func _is_in_canvas(pos: Vector2) -> bool:
 func _on_button_back_pressed():
 	Events.request_scene.emit(SceneLibraryData.SceneID.TITLE)
 
-func _on_button_restart_pressed():
+func _on_button_refresh_pressed():
 	Events.request_scene.emit(SceneLibraryData.SceneID.DRAW)
