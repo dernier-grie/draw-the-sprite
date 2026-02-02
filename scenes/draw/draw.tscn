@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://ccdxa4hcagvbm" path="res://assets/sprites/controls/icon-back.png" id="18_r2yso"]
 [ext_resource type="Texture2D" uid="uid://b0pjupuk6oa2i" path="res://assets/sprites/controls/icon-restart.png" id="19_r2yso"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_04dcr"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r2yso"]
 bg_color = Color(0.32941177, 0.3254902, 0.3254902, 1)
 corner_radius_top_left = 36
 corner_radius_top_right = 36
@@ -34,93 +34,7 @@ canvas_scene = ExtResource("14_65k71")
 ui_color = Color(0.32941177, 0.3254902, 0.3254902, 1)
 
 [node name="Background" parent="." instance=ExtResource("15_8mcof")]
-
-[node name="ControlsContainer" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TouchHintBack" parent="ControlsContainer" instance=ExtResource("17_8mcof")]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -156.0
-offset_right = 156.0
-grow_vertical = 0
-scale = Vector2(0.75, 0.75)
-pivot_offset = Vector2(0, 156)
-
-[node name="MarginContainer" type="MarginContainer" parent="ControlsContainer/TouchHintBack"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -192.0
-offset_right = 192.0
-grow_vertical = 0
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_bottom = 20
-
-[node name="PanelContainer" type="PanelContainer" parent="ControlsContainer/TouchHintBack/MarginContainer"]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_04dcr")
-
-[node name="MarginContainer" type="MarginContainer" parent="ControlsContainer/TouchHintBack/MarginContainer/PanelContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 40
-theme_override_constants/margin_top = 40
-theme_override_constants/margin_right = 40
-theme_override_constants/margin_bottom = 40
-
-[node name="TextureRect" type="TextureRect" parent="ControlsContainer/TouchHintBack/MarginContainer/PanelContainer/MarginContainer"]
-layout_mode = 2
-texture = ExtResource("18_r2yso")
-
-[node name="TouchHintRestart" parent="ControlsContainer" instance=ExtResource("17_8mcof")]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -156.0
-offset_top = -156.0
-grow_horizontal = 0
-grow_vertical = 0
-scale = Vector2(0.75, 0.75)
-pivot_offset = Vector2(0, 156)
-
-[node name="MarginContainer" type="MarginContainer" parent="ControlsContainer/TouchHintRestart"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -192.0
-offset_right = 192.0
-grow_vertical = 0
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_bottom = 20
-
-[node name="PanelContainer" type="PanelContainer" parent="ControlsContainer/TouchHintRestart/MarginContainer"]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_04dcr")
-
-[node name="MarginContainer" type="MarginContainer" parent="ControlsContainer/TouchHintRestart/MarginContainer/PanelContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 40
-theme_override_constants/margin_top = 40
-theme_override_constants/margin_right = 40
-theme_override_constants/margin_bottom = 40
-
-[node name="TextureRect" type="TextureRect" parent="ControlsContainer/TouchHintRestart/MarginContainer/PanelContainer/MarginContainer"]
-layout_mode = 2
-texture = ExtResource("19_r2yso")
+mouse_filter = 2
 
 [node name="AnimalContainer" type="CenterContainer" parent="."]
 anchors_preset = 8
@@ -161,6 +75,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 156
 theme_override_constants/margin_top = 156
 theme_override_constants/margin_right = 156
@@ -168,3 +83,108 @@ theme_override_constants/margin_bottom = 156
 
 [node name="CanvasContainer" type="Control" parent="MarginContainer"]
 layout_mode = 2
+
+[node name="ControlsContainer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TouchHintBack" parent="ControlsContainer" instance=ExtResource("17_8mcof")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -156.0
+offset_right = 156.0
+grow_vertical = 0
+scale = Vector2(0.75, 0.75)
+pivot_offset = Vector2(0, 156)
+
+[node name="MarginContainer" type="MarginContainer" parent="ControlsContainer/TouchHintBack"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -192.0
+offset_right = 192.0
+grow_vertical = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="PanelContainer" type="PanelContainer" parent="ControlsContainer/TouchHintBack/MarginContainer"]
+clip_contents = true
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_r2yso")
+
+[node name="ButtonBack" type="Button" parent="ControlsContainer/TouchHintBack/MarginContainer/PanelContainer"]
+layout_mode = 2
+flat = true
+
+[node name="MarginContainer" type="MarginContainer" parent="ControlsContainer/TouchHintBack/MarginContainer/PanelContainer/ButtonBack"]
+layout_mode = 0
+offset_right = 176.0
+offset_bottom = 176.0
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="TextureButtonBack" type="TextureRect" parent="ControlsContainer/TouchHintBack/MarginContainer/PanelContainer/ButtonBack/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("18_r2yso")
+
+[node name="TouchHintRestart" parent="ControlsContainer" instance=ExtResource("17_8mcof")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -156.0
+offset_top = -156.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.75, 0.75)
+pivot_offset = Vector2(156, 156)
+
+[node name="MarginContainer" type="MarginContainer" parent="ControlsContainer/TouchHintRestart"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_top = -192.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="PanelContainer" type="PanelContainer" parent="ControlsContainer/TouchHintRestart/MarginContainer"]
+clip_contents = true
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_r2yso")
+
+[node name="ButtonRestart" type="Button" parent="ControlsContainer/TouchHintRestart/MarginContainer/PanelContainer"]
+layout_mode = 2
+flat = true
+
+[node name="MarginContainer" type="MarginContainer" parent="ControlsContainer/TouchHintRestart/MarginContainer/PanelContainer/ButtonRestart"]
+layout_mode = 0
+offset_right = 176.0
+offset_bottom = 176.0
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="TextureButtonBack" type="TextureRect" parent="ControlsContainer/TouchHintRestart/MarginContainer/PanelContainer/ButtonRestart/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("19_r2yso")

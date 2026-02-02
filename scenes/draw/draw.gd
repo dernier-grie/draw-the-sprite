@@ -15,6 +15,9 @@ extends Node
 @onready var touch_hint_back: TouchHint = $ControlsContainer/TouchHintBack
 @onready var touch_hint_restart: TouchHint = $ControlsContainer/TouchHintRestart
 
+@onready var button_back: Button = $ControlsContainer/TouchHintBack/MarginContainer/PanelContainer/ButtonBack
+@onready var button_restart: Button = $ControlsContainer/TouchHintRestart/MarginContainer/PanelContainer/ButtonRestart
+
 var animal_data: AnimalData
 
 func _ready() -> void:
@@ -22,6 +25,7 @@ func _ready() -> void:
 	_setup_animal()
 	_setup_frame()
 	_setup_canvas()
+	_setup_controls()
 
 func _setup_animal():
 	texture_rect_animal.texture = animal_data.texture
@@ -42,13 +46,17 @@ func _setup_canvas():
 		child.queue_free()
 	canvas_container.add_child(canvas)
 
+func _setup_controls():
+	button_back.pressed.connect(_on_button_back_pressed)
+	button_restart.pressed.connect(_on_button_restart_pressed)
+
 func _on_canvas_drawn():
 	var tween = create_tween()
 	tween.tween_property(texture_rect_animal, "modulate:a", 1.0, reveal_duration)
 	tween.parallel().tween_property(texture_rect_frame, "modulate:a", 0.0, reveal_duration)
 	tween.parallel().tween_property(canvas_container, "modulate:a", 0.0, reveal_duration)
 
-func _input(event: InputEvent) -> void:
+func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if not _is_in_canvas(event.position):
 			touch_hint_back.show_hint()
@@ -56,3 +64,9 @@ func _input(event: InputEvent) -> void:
 
 func _is_in_canvas(pos: Vector2) -> bool:
 	return canvas_container.get_rect().has_point(pos)
+
+func _on_button_back_pressed():
+	Events.request_scene.emit(SceneLibraryData.SceneID.TITLE)
+
+func _on_button_restart_pressed():
+	Events.request_scene.emit(SceneLibraryData.SceneID.DRAW)
