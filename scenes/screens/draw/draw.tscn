@@ -85,17 +85,7 @@ theme_override_constants/margin_bottom = 156
 [node name="CanvasContainer" type="Control" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="ControlsContainer" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="TouchHintBack" parent="ControlsContainer" instance=ExtResource("17_8mcof")]
-layout_mode = 1
+[node name="TouchHintBack" parent="." instance=ExtResource("17_8mcof")]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -105,7 +95,7 @@ grow_vertical = 0
 scale = Vector2(0.75, 0.75)
 pivot_offset = Vector2(0, 156)
 
-[node name="MarginContainer" type="MarginContainer" parent="ControlsContainer/TouchHintBack"]
+[node name="MarginContainer" type="MarginContainer" parent="TouchHintBack"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 1
 anchors_preset = 2
@@ -117,16 +107,16 @@ grow_vertical = 0
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="PanelContainer" type="PanelContainer" parent="ControlsContainer/TouchHintBack/MarginContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="TouchHintBack/MarginContainer"]
 clip_contents = true
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_r2yso")
 
-[node name="ButtonBack" type="Button" parent="ControlsContainer/TouchHintBack/MarginContainer/PanelContainer"]
+[node name="ButtonBack" type="Button" parent="TouchHintBack/MarginContainer/PanelContainer"]
 layout_mode = 2
 flat = true
 
-[node name="MarginContainer" type="MarginContainer" parent="ControlsContainer/TouchHintBack/MarginContainer/PanelContainer/ButtonBack"]
+[node name="MarginContainer" type="MarginContainer" parent="TouchHintBack/MarginContainer/PanelContainer/ButtonBack"]
 layout_mode = 0
 offset_right = 176.0
 offset_bottom = 176.0
@@ -135,12 +125,11 @@ theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 40
 theme_override_constants/margin_bottom = 40
 
-[node name="TextureRect" type="TextureRect" parent="ControlsContainer/TouchHintBack/MarginContainer/PanelContainer/ButtonBack/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="TouchHintBack/MarginContainer/PanelContainer/ButtonBack/MarginContainer"]
 layout_mode = 2
 texture = ExtResource("18_r2yso")
 
-[node name="TouchHintRefresh" parent="ControlsContainer" instance=ExtResource("17_8mcof")]
-layout_mode = 1
+[node name="TouchHintRefresh" parent="." instance=ExtResource("17_8mcof")]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -153,7 +142,7 @@ grow_vertical = 0
 scale = Vector2(0.75, 0.75)
 pivot_offset = Vector2(156, 156)
 
-[node name="MarginContainer" type="MarginContainer" parent="ControlsContainer/TouchHintRefresh"]
+[node name="MarginContainer" type="MarginContainer" parent="TouchHintRefresh"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 1
 anchors_preset = 3
@@ -168,16 +157,16 @@ grow_vertical = 0
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="PanelContainer" type="PanelContainer" parent="ControlsContainer/TouchHintRefresh/MarginContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="TouchHintRefresh/MarginContainer"]
 clip_contents = true
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_r2yso")
 
-[node name="ButtonRefresh" type="Button" parent="ControlsContainer/TouchHintRefresh/MarginContainer/PanelContainer"]
+[node name="ButtonRefresh" type="Button" parent="TouchHintRefresh/MarginContainer/PanelContainer"]
 layout_mode = 2
 flat = true
 
-[node name="MarginContainer" type="MarginContainer" parent="ControlsContainer/TouchHintRefresh/MarginContainer/PanelContainer/ButtonRefresh"]
+[node name="MarginContainer" type="MarginContainer" parent="TouchHintRefresh/MarginContainer/PanelContainer/ButtonRefresh"]
 layout_mode = 0
 offset_right = 176.0
 offset_bottom = 176.0
@@ -186,7 +175,7 @@ theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 40
 theme_override_constants/margin_bottom = 40
 
-[node name="TextureRect" type="TextureRect" parent="ControlsContainer/TouchHintRefresh/MarginContainer/PanelContainer/ButtonRefresh/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="TouchHintRefresh/MarginContainer/PanelContainer/ButtonRefresh/MarginContainer"]
 layout_mode = 2
 texture = ExtResource("19_r2yso")
 

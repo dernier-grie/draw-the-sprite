@@ -15,11 +15,11 @@ extends Node
 @onready var texture_rect_animal: TextureRect = $AnimalContainer/TextureRect
 @onready var texture_rect_frame: TextureRect = $FrameContainer/TextureRect
 
-@onready var touch_hint_back: TouchHint = $ControlsContainer/TouchHintBack
-@onready var touch_hint_refresh: TouchHint = $ControlsContainer/TouchHintRefresh
+@onready var touch_hint_back: TouchHint = $TouchHintBack
+@onready var touch_hint_refresh: TouchHint = $TouchHintRefresh
 
-@onready var button_back: Button = $ControlsContainer/TouchHintBack/MarginContainer/PanelContainer/ButtonBack
-@onready var button_refresh: Button = $ControlsContainer/TouchHintRefresh/MarginContainer/PanelContainer/ButtonRefresh
+@onready var button_back: Button = $TouchHintBack/MarginContainer/PanelContainer/ButtonBack
+@onready var button_refresh: Button = $TouchHintRefresh/MarginContainer/PanelContainer/ButtonRefresh
 
 @onready var audio_cue_layer: AudioCueLayer = $AudioCueLayer
 
