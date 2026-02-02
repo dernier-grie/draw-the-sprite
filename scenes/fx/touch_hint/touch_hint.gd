@@ -2,8 +2,10 @@ extends Control
 class_name TouchHint
 
 @export var auto_hide_time: float = 3.0
+
 @onready var timer: Timer = $Timer
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+
 var _fully_visible: bool
 
 func _ready() -> void:

@@ -15,7 +15,7 @@ class_name DrawCanvas
 @export var frame_size: float= 408.0
 @export var threshold_margin: float = 0.0
 
-@export_group("")
+@export_group("Particle options")
 @export var particle_color: Color = Color.ORANGE
 
 signal drawn

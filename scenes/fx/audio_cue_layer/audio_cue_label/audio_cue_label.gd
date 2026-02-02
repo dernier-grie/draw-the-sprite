@@ -1,8 +1,11 @@
 extends Label
 class_name AudioCueLabel
 
+@export_group("Label")
 @export var audio_text: String
 @export var start_position: Vector2
+
+@export_group("Animation")
 @export_range(0.1, 1.0, 0.1) var speed_scale: float = 1.0
 @export var max_delay: float = 1.0
 
